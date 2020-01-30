@@ -5,6 +5,11 @@ namespace DddInPractice.Logic
     //entity
     public class SnackMachine : Entity
     {
+        public SnackMachine()
+        {
+            MoneyInside = new Money(0, 0, 0, 0, 0, 0);
+            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
+        }
         public Money MoneyInside { get; private set; }
         public Money MoneyInTransaction { get; private set; }
 
@@ -15,7 +20,7 @@ namespace DddInPractice.Logic
 
         public void ReturnMoney()
         {
-            //MoneyInTransaction = 0;
+            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
         }
 
         public void BuySnack()
